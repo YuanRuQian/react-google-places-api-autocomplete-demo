@@ -126,11 +126,11 @@ export default function GoogleMaps() {
       filterSelectedOptions
       value={value}
       noOptionsText="No locations"
-      onChange={(event: any, newValue: PlaceType | null) => {
+      onChange={(_: any, newValue: PlaceType | null) => {
         setOptions(newValue ? [newValue, ...options] : options);
         setValue(newValue);
       }}
-      onInputChange={(event, newInputValue) => {
+      onInputChange={(_, newInputValue) => {
         setInputValue(newInputValue);
       }}
       renderInput={(params) => (
