@@ -5,18 +5,12 @@ on:
     branches:
       - main
 
-
-
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./autocomplete-demo
 
     steps:
-
       - name: Checkout repo
         uses: actions/checkout@v3
 
@@ -40,9 +34,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    defaults:
-      run:
-        working-directory: ./autocomplete-demo
 
     steps:
       - name: Download artifact
